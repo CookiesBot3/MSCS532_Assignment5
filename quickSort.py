@@ -1,7 +1,7 @@
 
 def partition(arr, low, high):
 
-    # Chose the pivot
+    # Choose the pivot
     pivot = arr[high]
     i = low - 1
 
