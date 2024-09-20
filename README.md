@@ -6,6 +6,4 @@ This repository consist of 4 files.
 
 To simulate a run. Run the main.py file. 
 
-To change the size of the generated arrays for the sort simulation change the "size" variable value on line 63 to your liking.
-
-Overall this comparison really shows how effective randomized pivot quick sort is in solving the worst case scenario for deterministic quick sort.
+To change the size of the generated arrays for the sort simulation change the "size" variable value on line 76 to your liking.

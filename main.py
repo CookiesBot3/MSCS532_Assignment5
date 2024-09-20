@@ -58,29 +58,21 @@ def sort_runner(arr, deterministic ,arrayType = 0):
     print(array_data_type + " after sorted: ", arr)
     print('')
 
+def simulate_run(arr_size, sort_type):
+    # Generate all the array dataset according to the flag ie. Random, ascending, descending
+    array_random = generate_data(arr_size, random_flag=True)
+    array_ascending = generate_data(arr_size, ascending=True)
+    array_descending = generate_data(arr_size, descending=True)
+    array_repeated = generate_data(arr_size)
+
+    # Run the Sorter for each type of the array for merge and quick sort
+    sort_runner(array_random, sort_type, arrayType=1)
+    sort_runner(array_ascending, sort_type, arrayType=2)
+    sort_runner(array_descending, sort_type, arrayType=3)
+    sort_runner(array_repeated, sort_type)
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    size = 400
-
-    # Generate all the array dataset according to the flag ie. Random, ascending, descending
-    arrayRandom = generate_data(size, random_flag=True)
-    arrayAscending = generate_data(size, ascending=True)
-    arrayDescending = generate_data(size, descending=True)
-    array_repeated = generate_data(size)
-
-    # Generate all the array dataset according to the flag ie. Random, ascending, descending
-    arrayRandom_2 = generate_data(size, random_flag=True)
-    arrayAscending_2 = generate_data(size, ascending=True)
-    arrayDescending_2 = generate_data(size, descending=True)
-    array_repeated_2 = generate_data(size)
-
-    # Run the Sorter for each type of the array for deterministic and Randomized quick sort
-    sort_runner(arrayRandom_2, True, arrayType=1)
-    sort_runner(arrayAscending_2, True, arrayType=2)
-    sort_runner(arrayDescending_2, True, arrayType=3)
-    sort_runner(array_repeated_2, True)
-
-    sort_runner(arrayRandom, False, arrayType=1)
-    sort_runner(arrayAscending, False, arrayType=2)
-    sort_runner(arrayDescending, False, arrayType=3)
-    sort_runner(array_repeated, False)
+    arr_size = 450  # Size of the array and values from 1 to size
+    simulate_run(arr_size, 1)
+    simulate_run(arr_size, 0)
